@@ -24,9 +24,12 @@ class MoviesController < ApplicationController
     end
     @sort_column = params[:sort_by]
     @all_ratings = Movie.all_ratings
-    @set_ratings = params[:ratings]
+    @set_ratings = params[:ratings]   #remeber last request checked checkbox
     if !@set_ratings
       @set_ratings = Hash.new
+      @firsttime = true
+    else
+      @firsttime = false
     end
 
 
