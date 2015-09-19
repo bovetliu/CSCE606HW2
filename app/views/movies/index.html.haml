@@ -13,6 +13,7 @@
       = check_box_tag "ratings[#{rating}]" , 1, @set_ratings.key?(rating)   #ratings[PG-13]
 
   = submit_tag 'Refresh', :id => 'ratings_submit'
+  
 
 %table#movies
   %thead
