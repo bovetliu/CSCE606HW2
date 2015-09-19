@@ -1,0 +1,12 @@
+https://salty-refuge-9363.herokuapp.com/movies
+
+// for Gemfile
+remove all gem "sqlite3"
+keep only one gem 'pg'
+
+
+when deployed, 'heroku run rake db:setup' will not work due to previlige restriction
+
+instead, I should run  
+'heroku run rake db:migrate'
+'heroku run rake db:seed'
