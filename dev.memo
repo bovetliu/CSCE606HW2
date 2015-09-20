@@ -10,3 +10,12 @@ when deployed, 'heroku run rake db:setup' will not work due to previlige restric
 instead, I should run  
 'heroku run rake db:migrate'
 'heroku run rake db:seed'
+
+
+git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch heroku' \
+--prune-empty --tag-name-filter cat -- --all
+
+git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch heroku.pub' \
+--prune-empty --tag-name-filter cat -- --all
